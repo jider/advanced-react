@@ -18,10 +18,18 @@ code {
   monospace;
 }
 
+.main-content {
+  align-content: center;
+  flex-grow: 1;
+  padding: 1rem;
+  text-align: center;
+}
 
 .main-layout {
+  align-items: stretch;
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .main-logo {
@@ -33,7 +41,6 @@ code {
 nav {
   background-color: #363a45;
   height: 100vh;
-  margin-right: 15px;
   overflow-y: auto;
   padding-block: 1rem;
   text-align: center;

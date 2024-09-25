@@ -1,0 +1,34 @@
+.lazy-load-layout {
+  display: flex;
+  flex-direction: column;
+
+  /* Header */
+
+  & h1 {
+    border-bottom: 0.2rem solid white;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  /* Menu */
+
+  & ul {
+    border-bottom: 0.2rem solid white;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+
+    & li {
+      border: 1px solid white;
+      padding: 0.5rem;
+
+      & > a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

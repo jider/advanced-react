@@ -1,5 +1,7 @@
 import logo from './../assets/react.svg'
 import {NavLink, Outlet} from 'react-router-dom'
+import {routes} from '../router/routes.ts'
+import {Suspense} from 'react'
 
 export default function MainLayout() {
   const isActiveHandler =  ({isActive} : {isActive : boolean}) => isActive ? 'nav-active' : ''
@@ -14,16 +16,19 @@ export default function MainLayout() {
           <li>
             <NavLink to="/" className={isActiveHandler}>Home</NavLink>
           </li>
-          <li>
-            <NavLink to="/about" className={isActiveHandler}>About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/users" className={isActiveHandler}>Users</NavLink>
-          </li>
+
+          {routes && routes.map((route) => (
+            <li key={route.path}>
+              <NavLink to={route.to} className={isActiveHandler}>{route.name}</NavLink>
+            </li>
+          ))}
+
         </ul>
       </nav>
       <div className="main-content">
-        <Outlet />
+        <Suspense fallback={<span>Loading...</span>}>
+          <Outlet/>
+        </Suspense>
       </div>
     </div>
   )
