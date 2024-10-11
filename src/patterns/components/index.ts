@@ -8,7 +8,7 @@ export {default as ProductButtons} from './ProductButtons.tsx'
 export {default as ProductImage} from '../components/ProductImage.tsx'
 export {default as ProductTitle} from '../components/ProductTitle.tsx'
 
-import type {ProductCardHOCProps} from '../interfaces/Product.ts'
+import type {ProductCardHOCProps} from '../types/Product.ts'
 
 export const ProductCard: ProductCardHOCProps = Object.assign(ProductCardHOC, {
   Buttons: ProductButtons,

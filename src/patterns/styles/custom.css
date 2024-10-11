@@ -1,0 +1,21 @@
+.bg-dark {
+  background-color: rgb(54, 58, 69);
+}
+
+.text-white {
+  color: white;
+}
+
+.img-bordered {
+  border-radius: 1.2rem;
+  padding: 1rem;
+  width: calc(100% - 1rem);
+}
+
+.action-buttons {
+  & button,
+  & span {
+    border-color: white;
+    color: white;
+  }
+}
