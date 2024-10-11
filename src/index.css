@@ -26,7 +26,6 @@ code {
 }
 
 .main-layout {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
   width: 100%;
