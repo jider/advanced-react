@@ -1,12 +1,12 @@
-import ProductCardHOC from './ProductCard.tsx'
-import ProductTitle from './ProductTitle.tsx'
-import ProductImage from './ProductImage.tsx'
-import ProductButtons from './ProductButtons.tsx'
+import ProductCardHOC from './productCard/ProductCard.tsx'
+import ProductTitle from './productCard/ProductTitle.tsx'
+import ProductImage from './productCard/ProductImage.tsx'
+import ProductButtons from './productCard/ProductButtons.tsx'
 
-export {default as ProductButtons} from './ProductButtons.tsx'
-
-export {default as ProductImage} from '../components/ProductImage.tsx'
-export {default as ProductTitle} from '../components/ProductTitle.tsx'
+export {default as ProductButtons} from './productCard/ProductButtons.tsx'
+export {default as ProductImage} from './productCard/ProductImage.tsx'
+export {default as ProductTitle} from './productCard/ProductTitle.tsx'
+export {default as ShoppingCart} from './shoppingCart/ShoppingCart'
 
 import type {ProductCardHOCProps} from '../types/Product.ts'
 

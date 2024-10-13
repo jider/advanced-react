@@ -1,24 +1,13 @@
-import {ProductButtons, ProductCard, ProductImage, ProductTitle} from '../components'
-
-import coffeeMug from '../../assets/coffee-mug.png'
+import {ProductButtons, ProductCard, ProductImage, ProductTitle, ShoppingCart} from '../components'
+import {useShoppingCart} from '../hooks/useShoppingCart.ts'
+import {products} from '../data/products.ts'
 import '../styles/custom.css'
 
-import type {Product} from '../types/Product.ts'
-
-const products: Product[] = [
-  {
-    id: crypto.randomUUID(),
-    title: 'Coffee Mug',
-    img: coffeeMug
-  },
-  {
-    id: crypto.randomUUID(),
-    title: 'Test'
-  }
-]
 
 export default function ShoppingPage() {
-  return (
+  const {shoppingCart, onProductCountChange } = useShoppingCart()
+
+   return (
     <>
       <h1>Shopping Store</h1>
       <hr/>
@@ -32,6 +21,8 @@ export default function ShoppingPage() {
             key={product.id}
             product={product}
             className='bg-dark text-white'
+            value={shoppingCart[product.id]?.count ?? 0}
+            onChange={onProductCountChange}
           >
             <ProductImage className='img-bordered' />
             <ProductTitle />
@@ -50,6 +41,8 @@ export default function ShoppingPage() {
           // </ProductCard>
         ))}
       </div>
+
+      <ShoppingCart shoppingCart={shoppingCart} onProductCountChange={onProductCountChange} />
     </>
   )
 }
