@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import {ProductContext} from './ProductCard.tsx'
+import {ProductContext} from './ProductContext.ts'
 import styles from '../../styles/styles.module.css'
 import noImage from '../../assets/no-image.jpg'
 import type {ProductImageProps} from '../../types/Product.ts'

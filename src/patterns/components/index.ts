@@ -3,6 +3,7 @@ import ProductTitle from './productCard/ProductTitle.tsx'
 import ProductImage from './productCard/ProductImage.tsx'
 import ProductButtons from './productCard/ProductButtons.tsx'
 
+export {default as ProductCardInitializer} from './productCard/ProductCardInitializer'
 export {default as ProductButtons} from './productCard/ProductButtons.tsx'
 export {default as ProductImage} from './productCard/ProductImage.tsx'
 export {default as ProductTitle} from './productCard/ProductTitle.tsx'

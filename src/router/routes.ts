@@ -9,6 +9,12 @@ export const routes: route[] = [
     name: 'Shopping Store'
   },
   {
+    to: '/shopping-store-initializer',
+    path: 'shopping-store-initializer',
+    component: lazy(() => import('../patterns/pages/ShoppingInitializerPage.tsx')),
+    name: 'Shopping Store With Initializer'
+  },
+  {
     to: '/lazy-load',
     path: 'lazy-load/*',
     component: lazy(() => import('../lazyload/layout/LazyLoadLayout.tsx')),

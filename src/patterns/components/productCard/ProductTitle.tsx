@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import {ProductContext} from './ProductCard.tsx'
+import {ProductContext} from './ProductContext.ts'
 import styles from '../../styles/styles.module.css'
 import type {ProductTitleProps} from '../../types/Product.ts'
 

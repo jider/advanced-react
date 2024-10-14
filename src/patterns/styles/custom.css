@@ -18,6 +18,12 @@
     border-color: white;
     color: white;
   }
+
+  & button[disabled] {
+    border-color: grey;
+    border-left: 1px solid white;
+    color: grey;
+  }
 }
 
 .shopping-cart {

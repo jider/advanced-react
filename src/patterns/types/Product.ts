@@ -9,13 +9,33 @@ export interface ProductCardProps {
   value?: number
 }
 
+export interface ProductCardInitializerProps extends Omit<ProductCardProps, 'children'> {
+  children?: ReactElement[] | ((args: ProductCardInitializerOptions) => JSX.Element)
+  initialValues?: ProductInitialValues
+}
+
+export interface ProductCardInitializerOptions {
+  counter: number;
+  isMaxCountReached: boolean;
+  maxCount?: number;
+  product: Product;
+
+  increaseBy: (value: number) => void;
+  reset: () => void
+}
+
+export interface ProductInitialValues {
+  count?: number
+  maxCount?: number
+}
+
 export interface ProductButtonsProps {
   className?: string
   style?: CSSProperties;
 }
 
 export interface ProductImageProps {
-  className?: string
+  className?: string;
   img?: string;
   title?: string;
   style?: CSSProperties;
@@ -44,8 +64,10 @@ export interface Product {
 
 export interface ProductCtx {
   counter: number;
-  increaseBy: (value: number) => void;
+  maxCount?: number;
   product: Product;
+  isMaxCountReached?: boolean
+  increaseBy: (value: number) => void;
 }
 
 export interface OnProductChangeArgs {
@@ -54,3 +76,10 @@ export interface OnProductChangeArgs {
 }
 
 export type OnProductChange = ({product, count}: OnProductChangeArgs) => void
+
+export interface UseProductArgs {
+  initialValues?: ProductInitialValues
+  product: Product
+  value?: number
+  onChange?: OnProductChange
+}
